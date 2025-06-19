@@ -14,6 +14,7 @@ describe('DOM Testing and User Behavior Simulation', () => {
     document.body.innerHTML = `
       <div id="dynamic-content"></div>
       <div id="error-message" class="hidden"></div>
+      <button id="simulate-click">Simulate Click</button>
       <form id="user-form">
         <input type="text" id="user-input" />
         <button type="submit">Submit</button>

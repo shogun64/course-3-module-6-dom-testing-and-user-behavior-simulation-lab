@@ -1,6 +1,7 @@
 // Step 1: Simulate User Behavior
 // - Add event listeners for button clicks and form submissions.
 // - Use JavaScript to dynamically update the DOM based on user actions.
+document.addEventListener("DOMContentLoaded", () => {
 const button = document.getElementById("simulate-click");
 const formEvent = document.getElementById("user-form");
 
@@ -11,6 +12,7 @@ button.addEventListener("click", () => {
 formEvent.addEventListener("submit", (event) => {
     event.preventDefault();
     handleFormSubmit("user-form", "dynamic-content");
+});
 });
 
 // Step 2: DOM Manipulation Functions
@@ -24,7 +26,7 @@ function addElementToDOM(containerId, content){
     newContent.append(paragraph);
 }
 
-function removeElementfromDOM(elementId){
+function removeElementFromDOM(elementId){
     const element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
 }
@@ -52,3 +54,10 @@ function handleFormSubmit(formId, outputId){
 // Step 4: Reusable Utilities
 // - Create modular utility functions, such as createElement(tag, attributes).
 // - Ensure all functions follow DRY principles for maintainability.
+
+module.exports = {
+  addElementToDOM,
+  removeElementFromDOM,
+  simulateClick,
+  handleFormSubmit,
+};
